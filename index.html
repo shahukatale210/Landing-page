@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feel - A Digital Solutions Business</title>
+
+<link rel="icon" type="image/x-icon" href="favicons/favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/css-ionicons.css">
+  <link rel="stylesheet" href="css/css-bootstrap-extended.css">
+  <link rel="stylesheet" href="css/css-main.css">
+
+  <script type="text/javascript" src="js/3541-js-three.min.js" defer></script>
+  <script type="text/javascript" src="js/8793-js-detector.js" defer></script>
+  <script id="vs" type="x-shader/x-vertex" defer>
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+    }
+  </script>
+
+  <script id="fs" type="x-shader/x-fragment" defer>
+    uniform sampler2D map;
+    uniform vec3 fogColor;
+    uniform float fogNear;
+    uniform float fogFar;
+
+    varying vec2 vUv;
+    void main() {
+
+      float depth = gl_FragCoord.z / gl_FragCoord.w;
+      float fogFactor = smoothstep( fogNear, fogFar, depth );
+
+      gl_FragColor = texture2D( map, vUv );
+      gl_FragColor.w *= pow( gl_FragCoord.z, 20.0 );
+      gl_FragColor = mix( gl_FragColor, vec4( fogColor, gl_FragColor.w ), fogFactor );
+    }
+
+  </script>
+  <script type="text/javascript" src="js/1.11.2-jquery.min.js" defer></script>
+  <script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+  <script src="js/js-bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous" defer></script>
+  <script src="js/6497-js-jquery.main.js" defer></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-21711145-1', { 'optimize_id': 'GTM-KLN4WBJ'});
+</script>
+<!--GET SITE CONTROL POPUP-->
+<script type="text/javascript" async src="js/d7o31z7e.js">
+</script>
+<!--END GET SITE CONTROL POPUP-->
+</head>
+<body class="homepage" data-spy="scroll" data-target="#nav">
+  <div id="wrapper">
+    <header id="header" data-spy="affix" data-offset-top="0" data-offset-bottom="0">
+      <div class="container">
+        <nav class="navbar navbar-default">
+          <div class="navbar-header">
+            <a class="navbar-brand change-color" href="#">
+
+             </a>
+          </div>
+          <a class="nav-opener change-color" href="#"><span></span></a>
+          <nav id="nav">
+            <div class="nav-container">
+              <a class="nav-opener" href="#"><span></span></a>
+              <div class="nav-holder">
+                <ul class="nav navbar-nav">
+                  <li><a href="#What-we-do">Who we are</a></li>
+                  <li><a href="#How-we-do-it">How we work</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" role="main">
+      <section class="top-inforamtiom">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 column">
+              <div class="text-block">
+                <div class="text-wrapper">
+                  <div class="holder">
+                    <!--h1>We build transformative experiences</h1-->
+                    <h1>Tuxedo for the Starship Enterprise</h1>
+                    <p>through digital craftsmanship for new age space travellers</p>
+                  </div>
+                  <div class="austronaut">
+                    <picture>
+                      <!--[if IE 9]><video style="display: none;"><![endif]-->
+                      <source srcset="images/image-astronaut-small.png, images/image-astronaut-small-2x.png 2x" media="(max-width: 820px)">
+                      <source srcset="images/image-astronaut.png">
+                      <!--[if IE 9]></video><![endif]-->
+                      <img src="images/images-image-astronaut.png" alt="image description">
+                    </source></source></picture>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <canvas id="canvas"></canvas>
+      </section>
+      <section class="content-cols" id="What-we-do">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-5 col-sm-offset-1 title-col">
+              <h2>We're a digital solutions business made up by tech misfits, passionate creatives and<br> curious humans.</h2>
+            </div>
+            <div class="col-xs-12 col-sm-5 description">
+              	<p>We work with entrepreneurs and forward-looking companies to transform ideas into products that HELP, CHALLENGE, and INSPIRE.</p>
+  				<p>From design through to code, we delight in finding simple solutions to complex challenges. And by
+				collaborating with our clients to form rewarding relationships, we help their companies grow and evolve.<br><br>
+				This process is further fuelled by our integrated approach to strategy, design and development, which allows us to
+				help deliver ideas from concept to launch, and beyond.</p>
+				<p>Not in a rush? Here’s a bit more about <a href="about.html">who we are.</a><br></p>
+            </div>
+          </div>
+        </div>
+        <div id="clouds"></div>
+        <div class="cloud-holder">
+         <img src="images/images-clouds.png" alt="image description" width="100%" height="50%">
+       </div>
+      </section>
+      <div class="container" id="How-we-do-it">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <div class="intro-section">
+              <h2>Put simply, we are SpaceX.</h2>
+              <ul class="abbr-list list-unstyled">
+                <li>
+                  <span class="letter">S</span>
+                  <span class="letter-explanation">Sophisticated</span>
+                  <p>The SpaceX spacesuits are a cool, one-piece white design</p>
+                </li>
+                <li>
+                  <span class="letter">p</span>
+                  <span class="letter-explanation">REFINE</span>
+                  <p>After some hustling and huddling, we refine our ideas into elegant solutions.</p>
+                </li>
+                <li>
+                  <span class="letter">a</span>
+                  <span class="letter-explanation">Agile</span>
+                  <p>A lot more sleeker than the older bulky space shuttle launch suits</p>
+                </li>
+                <li>
+                  <span class="letter">c</span>
+                  <span class="letter-explanation">DEFINE</span>
+                  <p>Lastly we craft user-centric products for you to take on the world. And win.</p>
+                </li>
+                <li>
+                  <span class="letter">e</span>
+                  <span class="letter-explanation">DEFINE</span>
+                  <p>Lastly we craft user-centric products for you to take on the world. And win.</p>
+                </li>
+                <li>
+                  <span class="letter">X</span>
+                  <span class="letter-explanation">DEFINE</span>
+                  <p>Lastly we craft user-centric products for you to take on the world. And win.</p>
+                </li>
+              </ul>
+  <p><br></p><p>Somewhat curious? Here’s a bit more about the <a>uncommon way we work </a>and <a >what we do.</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+  </div> 
+</div>
+
+</body>
+</html>
